@@ -5,7 +5,7 @@ public class Calc {
 
     Scanner scanner  = new Scanner(System.in);
 
-        // Afficher la demande
+    // Afficher une demande d'entrée
     System.out.println("Enter a number: ");
 
     int value_1 = scanner.nextInt(); // variable de type integer
@@ -13,11 +13,11 @@ public class Calc {
 
 
 
-    System.out.format("%d \n", value_1 + value_2);
-    System.out.format("%d \n", value_1 - value_2);
-    System.out.format("%d \n", value_1 * value_2);
-    System.out.format("%d \n", value_1 / value_2);
-    System.out.format("%d \n", value_1 % value_2);
+    System.out.println(value_1 + value_2); // Nous allons afficher:
+    System.out.println(value_1 - value_2); // la soustraction,
+    System.out.println(value_1 * value_2); // le produit,
+    System.out.println(value_1 / value_2); // le quotient,
+    System.out.println(value_1 % value_2); // et le reste.
 
   }
 }

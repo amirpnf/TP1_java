@@ -74,11 +74,11 @@ public class Calc {
 
 
 
-    System.out.format("%d \n", value_1 + value_2); // Nous allons afficher:
-    System.out.format("%d \n", value_1 - value_2); // la soustraction,
-    System.out.format("%d \n", value_1 * value_2); // le produit,
-    System.out.format("%d \n", value_1 / value_2); // le quotient,
-    System.out.format("%d \n", value_1 % value_2); // et le reste.
+    System.out.println(value_1 + value_2); // Nous allons afficher:
+    System.out.println(value_1 - value_2); // la soustraction,
+    System.out.println(value_1 * value_2); // le produit,
+    System.out.println(value_1 / value_2); // le quotient,
+    System.out.println(value_1 % value_2); // et le reste.
 
   }
 }
