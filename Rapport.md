@@ -39,9 +39,9 @@ rien ne sera affiché.
 
 2. La boucle que l'on pourrait écrire en utilisant `length` en Java :
 ```
-for (int i = 0; i < args.length; i++) { // ou bien var i = 0
+for (int i = 0; i < args.length; i++) { // or var i = 0
     System.out.println(args[i]);
-    // ou bien : System.out.format("%s \n", args[i]);
+    // or : System.out.format("%s \n", args[i]);
 }
 ```
 
@@ -63,23 +63,16 @@ import java.util.Scanner;
 
 public class Calc {
   public static void main(String[] args) {
-
     Scanner scanner  = new Scanner(System.in);
-
-    // Afficher une demande d'entrée
+    // Show a request
     System.out.println("Enter a number: ");
-
-    int value_1 = scanner.nextInt(); // variable de type integer
-    int value_2 = scanner.nextInt(); // Pareil
-
-
-
-    System.out.println(value_1 + value_2); // Nous allons afficher:
-    System.out.println(value_1 - value_2); // la soustraction,
-    System.out.println(value_1 * value_2); // le produit,
-    System.out.println(value_1 / value_2); // le quotient,
-    System.out.println(value_1 % value_2); // et le reste.
-
+    int value_1 = scanner.nextInt(); // integer variable
+    int value_2 = scanner.nextInt(); // Same thing
+    System.out.println(value_1 + value_2); // We are going to print:
+    System.out.println(value_1 - value_2); // the difference,
+    System.out.println(value_1 * value_2); // the product,
+    System.out.println(value_1 / value_2); // the quotient and
+    System.out.println(value_1 % value_2); // the divide remaining.
   }
 }
 ```
@@ -157,30 +150,31 @@ public class Pascal {
   public static int pascal(int nBut, int pBut) {
     int[] tab = new int[nBut + 1];
     tab[0] = 1;
-
-    for(int n = 1; n < nBut; n++) {
+    for(var n = 1; n < nBut; n++) {
       tab[n] = 1;
-
-      for(int i = n-1; i > 0; i--) {
+      for(var i = n-1; i > 0; i--) {
         tab[i] = tab[i-1] + tab[i];
       }
     }
-
-    int result=tab[pBut];
-    return result;
+    return tab[pBut];
   }
 }
 ```
 
 Le programme pascal.c a pour temps d'exécution, 0.089 secondes. (Il faut
 considérer que nous avons compilé notre fichier .c avec cette commande :
-`gcc td01-pascal.c -o Pascal -O3` dont l'option `-O` permet de minimiser le
-runtime de ce programme. (on a -O0, -O1, -O2, -O3) )
+`gcc td01-pascal.c -o Pascal -O3` dont l'option `-O` permet de réduire un peu,
+le runtime de ce programme. (on a -O0, -O1, -O2, -O3) ).
 
 Alors que le temps d'exécution du même programme en Java est de 0.220 secondes.
 
 Donc finalement le C est plus rapide que le Java.
-Cette différence de rapidité est due au fait que le C nous crée un code
-assembleur qui est ensuite exécuté directement, alors qu'en java le code est
+Cette différence de rapidité est due au fait qu'en java le code est
 d'abord transformé en bytecode et ensuite ce bytecode est interprété pour
-devenir un morceau de code assembleur.
+devenir un morceau de code assembleur, et en plus, cela se fait à l'exécution.
+
+Mais ce n'est pas un vrai résultat car si on n'avait pas utilisé l'option -O3
+pour compiler le programme C, son temps d'exécution serait plus que le programme
+Java.
+D'ailleurs un des défauts de -O3 c'est que c'est pas exécutable partout. Il
+faut recompiler le programme C avec cette option, de nouveau sur chaque machine.
