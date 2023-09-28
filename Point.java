@@ -15,7 +15,7 @@ public record Point(int x, int y) {
     return res;
   }
 
-  @Override // Peut-être pas nécessaire.
+  @Override // Maybe not necessary !
   public String toString() {
     return "Point[x=" + x + ", " + "y=" + y + "]" ;
   }
